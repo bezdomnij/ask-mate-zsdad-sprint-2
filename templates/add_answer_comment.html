@@ -1,0 +1,9 @@
+{% extends('layout.html') %}
+
+{% block content %}
+    <form method="post">
+        <label> Add Comment to Answer </label> <br>
+        <textarea rows="4" cols="50" required name="comment"></textarea><br>
+        <input type="submit" value="Submit">
+    </form>
+{% endblock content %}

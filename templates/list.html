@@ -1,0 +1,43 @@
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <title>{% block page_title %}Main page{% endblock %} - Application process</title>#}
+{#    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">#}
+{#</head>#}
+{% extends "layout.html" %}
+
+
+{% block content %}
+<body>
+    <h1>Questions</h1>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Voted</th>
+        <th>Title</th>
+        <th>Question</th>
+    </tr>
+    </thead>
+    <tbody>
+        {% for question in all_data_reversed %}
+    <tr>
+        <td><a href="{{ url_for('q_id', question_id=question['id']) }}">{{ question['id'] }}</a></td>
+        <td><a href="{{ url_for('vote_question_up', question_id=question['id']) }}">
+            <span style='font-size:15px;'>&#128077;</span>
+        </a><a href="{{ url_for('vote_question_down', question_id=question['id']) }}">
+            <span style='font-size:15px;'>&#128078;</span>
+
+        </a><br><br>{{ question['vote_number'] }}</td>
+        <td>{{ question["title"] }}</td>
+        <td>{{ question["message"] }}</td>
+    </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<a href="/add_question">Add a new question</a>
+</body>
+
+{% endblock %}

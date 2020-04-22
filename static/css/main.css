@@ -1,0 +1,40 @@
+body {
+    background-color: #aab0b1;
+    color: #650303;
+}
+
+.content-wrapper {
+    padding: 5%;
+}
+
+thead,
+tfoot {
+    background-color: #929a9e;
+    color: #150101;
+}
+
+tbody {
+    background-color: #a5b381;
+}
+
+table {
+    border-collapse: collapse;
+    border: 2px solid rgb(200, 200, 200);
+    letter-spacing: 1px;
+    font-family: sans-serif;
+    font-size: 1rem;
+    color: #010110;
+}
+td,
+th {
+    border: 1px solid rgb(190, 190, 190);
+    padding: 5px 10px;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}

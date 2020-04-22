@@ -1,0 +1,11 @@
+id,submission_time,vote_number,question_id,message,image
+1,1493398154,4,1,You need to use brackets: my_list = [],
+2,1493088154,35,1,Look it up in the Python docs,
+3,1586505498,,2,I'm bored of writing answers.,
+4,1586505596,,2,Again.,
+5,1586505616,,2,And again.,
+6,1586507476,,4,Have you tried Codecool?,
+7,1586507496,,4,Check StackOverflow,
+8,1586508039,,1,djweifjwefjiowefo,
+9,1586513275,,6,Check HTML documentation.,
+10,1586541008,,3,Ask someone smart.,
