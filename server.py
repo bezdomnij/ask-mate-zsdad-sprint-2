@@ -8,11 +8,22 @@ import time
 
 app = Flask(__name__)
 
-@app.route("/")
+
+@app.route("/", methods=['GET', 'POST'])
 def get_five():
-    latest_questions = data_manager.get_latest_questions()
-    # all_questions_reversed = data_handler.sorting(all_questions, sortkey='id', rev=True)
-    return render_template("landing.html", all_data_reversed=latest_questions)
+    if request.method == 'GET':
+        latest_questions = data_manager.get_latest_questions()
+        # all_questions_reversed = data_handler.sorting(all_questions, sortkey='id', rev=True)
+        return render_template("landing.html", all_data_reversed=latest_questions)
+    elif request.method == "POST":
+        search_text = request.form.get('search_text')
+        return redirect(url_for('searched_question', search_text=search_text))
+
+
+@app.route("/search_result/<search_text>")
+def searched_question(search_text):
+    search_result = data_manager.search_questions(search_text)
+    return render_template('search_result.html', search_result=search_result)
 
 
 @app.route("/list")

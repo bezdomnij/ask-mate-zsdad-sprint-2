@@ -1,6 +1,7 @@
 body {
-    background-color: #aab0b1;
-    color: #650303;
+    background-color: #ffdd84;
+    color: #000000 ;
+    font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', sans-serif;
 }
 
 .content-wrapper {
@@ -14,16 +15,16 @@ tfoot {
 }
 
 tbody {
-    background-color: #a5b381;
+    background-color: lightblue;
 }
 
 table {
     border-collapse: collapse;
     border: 2px solid rgb(200, 200, 200);
     letter-spacing: 1px;
-    font-family: sans-serif;
     font-size: 1rem;
     color: #010110;
+    font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', sans-serif
 }
 td,
 th {
@@ -35,6 +36,45 @@ a:link {
     text-decoration: none;
 }
 
+.wrapper {
+    display: flex;
+}
+#header-title {
+    text-align: center;
+}
+.question-block {
+    flex: 1;
+    margin: 20px;
+    padding: 10px;
+    background-color: lightblue;
+}
+.answer-block {
+    flex: 1;
+    margin: 20px;
+    padding: 10px;
+    background-color: lightblue;
+}
+.buttons {
+    margin: 20px;
+}
+
 a:visited {
     text-decoration: none;
 }
+
+.r {
+    display: inline-block;
+}
+.a {
+    display: inline-block;
+}
+
+.q {
+    display: inline;
+}
+
+.d {
+    display: block;
+}
+
+

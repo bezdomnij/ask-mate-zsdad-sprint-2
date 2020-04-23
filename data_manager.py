@@ -164,3 +164,14 @@ def get_latest_questions(cursor: RealDictCursor) -> list:
         ORDER BY submission_time DESC LIMIT 5"""
     cursor.execute(query)
     return cursor.fetchall()
+
+@database_common.connection_handler
+def search_questions(cursor: RealDictCursor, s_t) -> list:
+    search_expression = '%' + s_t + '%'
+    query = """
+        SELECT *
+        FROM question
+        WHERE message ILIKE %(search)s
+        ORDER BY submission_time"""
+    cursor.execute(query, {'search': search_expression})
+    return cursor.fetchall()
