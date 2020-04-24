@@ -4,8 +4,6 @@ import data_manager
 from collections import OrderedDict
 from datetime import datetime
 
-import time
-
 app = Flask(__name__)
 
 
