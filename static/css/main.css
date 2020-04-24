@@ -39,8 +39,17 @@ a:link {
 .wrapper {
     display: flex;
 }
+.list_wrapper {
+    display: flex;
+}
 #header-title {
     text-align: center;
+}
+.sorting_block {
+    flex: 1;
+    margin: 20px;
+    padding: 10px;
+    background-color: #ffdd84;
 }
 .question-block {
     flex: 1;

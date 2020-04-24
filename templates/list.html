@@ -11,32 +11,53 @@
 {% block content %}
 <body>
     <h1>Questions</h1>
-<table>
-    <thead>
-    <tr>
-        <th>ID</th>
-        <th>Voted</th>
-        <th>Title</th>
-        <th>Question</th>
-    </tr>
-    </thead>
-    <tbody>
-        {% for question in all_data_reversed %}
-    <tr>
-        <td><a href="{{ url_for('q_id', question_id=question['id']) }}">{{ question['id'] }}</a></td>
-        <td><a href="{{ url_for('vote_question_up', question_id=question['id']) }}">
-            <span style='font-size:15px;'>&#128077;</span>
-        </a><a href="{{ url_for('vote_question_down', question_id=question['id']) }}">
-            <span style='font-size:15px;'>&#128078;</span>
+<div class="list_wrapper">
+    <div class="sorting_block">
+        <div>
+            <input type="radio" name="sorting" id="submission_time" value="submission_time" checked>
+            <label for="submission_time">Submission time</label>
+        </div>
+        <div>
+            <input type="radio" name="sorting" id="title" value="title">
+            <label for="title">question Title</label>
+        </div>
+        <div>
+            <input type="radio" name="sorting" id="message" value="message">
+            <label for="message">question Message</label>
+        </div>
+        <div>
+            <input type="radio" name="sorting" id="vote_number" value="vote_number">
+            <label for="vote_number">Vote number</label>
+        </div>
+    </div>
+    <div class="qlist_block">
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Voted</th>
+                <th>Title</th>
+                <th>Question</th>
+            </tr>
+            </thead>
+            <tbody>
+                {% for question in all_data_reversed %}
+            <tr>
+                <td><a href="{{ url_for('q_id', question_id=question['id']) }}">{{ question['id'] }}</a></td>
+                <td><a href="{{ url_for('vote_question_up', question_id=question['id']) }}">
+                    <span style='font-size:15px;'>&#128077;</span>
+                </a><a href="{{ url_for('vote_question_down', question_id=question['id']) }}">
+                    <span style='font-size:15px;'>&#128078;</span>
 
-        </a><br><br>{{ question['vote_number'] }}</td>
-        <td>{{ question["title"] }}</td>
-        <td>{{ question["message"] }}</td>
-    </tr>
-        {% endfor %}
-    </tbody>
-</table>
-
+                </a><br><br>{{ question['vote_number'] }}</td>
+                <td>{{ question["title"] }}</td>
+                <td>{{ question["message"] }}</td>
+            </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
 <a href="/add_question">Add a new question</a>
 </body>
 
