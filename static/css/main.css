@@ -19,15 +19,32 @@ tbody {
 }
 
 table {
+    table-layout: fixed;
+    width: 100%;
     border-collapse: collapse;
     border: 2px solid rgb(200, 200, 200);
     letter-spacing: 1px;
-    font-size: 1rem;
+    font-size: .8rem;
     color: #010110;
     font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', sans-serif
 }
+.question {
+    width: 60%;
+}
+.qid {
+    width: 5%;
+    align-items: center;
+}
+.votes {
+    width: 5%;
+    align-content: center;
+}
+.voted {
+    width: 8%
+}
 td,
 th {
+    width: -moz-min-content;
     border: 1px solid rgb(190, 190, 190);
     padding: 5px 10px;
 }
@@ -36,24 +53,25 @@ a:link {
     text-decoration: none;
 }
 
-.wrapper {
-    display: flex;
-}
 .list_wrapper {
     display: flex;
 }
-#header-title {
-    text-align: center;
-}
+
 .sorting_block {
     flex: 1;
-    margin: 5px;
-    padding: 5px;
+    margin: 20px;
+    padding: 10px;
     background-color: #ffdd84;
 }
+
 .qlist_block {
     flex: 5;
 }
+
+
+.wrapper {
+    display: flex;
+
 .question-block {
     flex: 1;
     margin: 20px;
@@ -68,6 +86,10 @@ a:link {
 }
 .buttons {
     margin: 20px;
+}
+}
+#header-title {
+    text-align: center;
 }
 
 a:visited {
