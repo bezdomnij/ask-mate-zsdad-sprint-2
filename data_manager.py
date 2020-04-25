@@ -1,4 +1,4 @@
-from typing import List, Dict
+from typing import List, Dict  # support for type hints
 
 from psycopg2 import sql
 from psycopg2.extras import RealDictCursor
