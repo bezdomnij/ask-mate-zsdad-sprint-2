@@ -24,7 +24,7 @@ table {
     border-collapse: collapse;
     border: 2px solid rgb(200, 200, 200);
     letter-spacing: 1px;
-    font-size: 1rem;
+    font-size: .8rem;
     color: #010110;
     font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', sans-serif
 }
@@ -33,9 +33,14 @@ table {
 }
 .qid {
     width: 5%;
+    align-items: center;
+}
+.votes {
+    width: 5%;
+    align-content: center;
 }
 .voted {
-    width: 7%
+    width: 8%
 }
 td,
 th {

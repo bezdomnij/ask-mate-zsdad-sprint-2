@@ -35,7 +35,8 @@
             <thead>
             <tr>
                 <th class="qid">ID</th>
-                <th class="voted">Voted</th>
+                <th class="voted">Vote</th>
+                <th class="votes">no.</th>
                 <th>Title</th>
                 <th class="question">Question</th>
             </tr>
@@ -48,8 +49,8 @@
                     <span style='font-size:15px;'>&#8657;</span>
                 </a><a href="{{ url_for('vote_question_down', question_id=question['id']) }}">
                     <span style='font-size:15px;'>&#8659;</span>
-
-                </a><br>{{ question['vote_number'] }}</td>
+                </a></td>
+                <td>{{ question['vote_number'] }}</td>
                 <td>{{ question["title"] }}</td>
                 <td>{{ question["message"] }}</td>
             </tr>
