@@ -1,5 +1,5 @@
-from flask import Flask, render_template, url_for, request, redirect
-import data_handler
+from flask import Flask, render_template, url_for, request, redirect, send_from_directory
+import os
 import data_manager
 from collections import OrderedDict
 from datetime import datetime
@@ -7,11 +7,16 @@ from datetime import datetime
 app = Flask(__name__)
 
 
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory(os.path.join(app.root_path, 'static'),
+                               'favicon.ico', mimetype='image/vnd.microsoft.icon')
+
+
 @app.route("/", methods=['GET', 'POST'])
 def get_five():
     if request.method == 'GET':
         latest_questions = data_manager.get_latest_questions()
-        # all_questions_reversed = data_handler.sorting(all_questions, sortkey='id', rev=True)
         return render_template("landing.html", all_data_reversed=latest_questions)
     elif request.method == "POST":
         search_text = request.form.get('search_text')
@@ -27,8 +32,7 @@ def searched_question(search_text):
 @app.route("/list")
 def get_question_list():
     all_questions = data_manager.get_questions()
-    all_questions_reversed = data_handler.sorting(all_questions, sortkey='id', rev=True)
-    return render_template("list.html", all_data_reversed=all_questions_reversed)
+    return render_template("list.html", all_data_reversed=all_questions)
 
 
 @app.route("/list/<question_id>", methods=['GET', 'POST'])

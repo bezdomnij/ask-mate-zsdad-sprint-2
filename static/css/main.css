@@ -47,9 +47,12 @@ a:link {
 }
 .sorting_block {
     flex: 1;
-    margin: 20px;
-    padding: 10px;
+    margin: 5px;
+    padding: 5px;
     background-color: #ffdd84;
+}
+.qlist_block {
+    flex: 5;
 }
 .question-block {
     flex: 1;
