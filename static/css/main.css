@@ -33,14 +33,15 @@ table {
 }
 .qid {
     width: 5%;
-    align-items: center;
+    text-align: center;
 }
 .votes {
     width: 5%;
-    align-content: center;
+    text-align: center;
 }
 .voted {
-    width: 8%
+    width: 8%;
+    text-align: center;
 }
 td,
 th {
@@ -71,7 +72,7 @@ a:link {
 
 .wrapper {
     display: flex;
-
+}
 .question-block {
     flex: 1;
     margin: 20px;
@@ -87,7 +88,7 @@ a:link {
 .buttons {
     margin: 20px;
 }
-}
+
 #header-title {
     text-align: center;
 }
