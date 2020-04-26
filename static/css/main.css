@@ -1,23 +1,15 @@
+
+.content-wrapper {
+    padding: 10px;
+}
+
 body {
     background-color: #ffdd84;
     color: #000000 ;
     font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', sans-serif;
 }
 
-.content-wrapper {
-    padding: 5%;
-}
-
-thead,
-tfoot {
-    background-color: #929a9e;
-    color: #150101;
-}
-
-tbody {
-    background-color: lightblue;
-}
-
+/* table stuff */
 table {
     table-layout: auto;
     width: 100%;
@@ -27,6 +19,28 @@ table {
     font-size: .8rem;
     color: #010110;
     font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', sans-serif
+}
+
+tbody {
+    background-color: lightblue;
+}
+
+thead,
+tfoot {
+    background-color: #929a9e;
+    color: #150101;
+}
+
+td,
+th {
+    width: fit-content;
+    border: 1px solid rgb(190, 190, 190);
+    padding: 5px 10px;
+}
+/* table stuff vege */
+
+.list_wrapper {
+    display: flex;
 }
 .question {
     width: 60%;
@@ -43,20 +57,6 @@ table {
     width: 8%;
     text-align: center;
 }
-td,
-th {
-    width: fit-content;
-    border: 1px solid rgb(190, 190, 190);
-    padding: 5px 10px;
-}
-
-a:link {
-    text-decoration: none;
-}
-
-.list_wrapper {
-    display: flex;
-}
 
 .sorting_block {
     flex: 1;
@@ -65,10 +65,9 @@ a:link {
     background-color: #ffdd84;
 }
 
-.qlist_block {
-    flex: 5;
+.question_list_block {
+    flex: 4.5;
 }
-
 
 .wrapper {
     display: flex;
@@ -93,10 +92,6 @@ a:link {
     text-align: center;
 }
 
-a:visited {
-    text-decoration: none;
-}
-
 .r {
     display: inline-block;
 }
@@ -112,4 +107,10 @@ a:visited {
     display: block;
 }
 
+a:visited {
+    text-decoration: none;
+}
 
+a:link {
+    text-decoration: none;
+}

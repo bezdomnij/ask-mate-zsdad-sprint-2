@@ -1,15 +1,15 @@
 {% extends "layout.html" %}
 
-
+{# This is the Edit question page #}
 {% block content %}
-<body>
+    <body>
     <form method="POST">
         <label for="title">Question Title</label><br>
-        <textarea rows="4" cols="50" required id="title">{{ title }}</textarea><br>
+        <textarea rows="4" cols="50" required id="title" name="title">{{ title }}</textarea><br>
         <label for="message">Question message</label><br>
         <textarea rows="4" cols="50" required id="message" name="message">{{ message }}</textarea><br>
         <input type="submit" value="Edit question">
     </form>
-</body>
-    {% include 'footer.html' %}
+    </body>
+{#    {% include 'footer.html' %}#}
 {% endblock %}

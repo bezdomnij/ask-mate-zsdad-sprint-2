@@ -1,16 +1,16 @@
 from flask import Flask, render_template, url_for, request, redirect, send_from_directory
-import os
+# import os
 import data_manager
 from collections import OrderedDict
 from datetime import datetime
 
 app = Flask(__name__)
 
-
-@app.route('/favicon.ico')
-def favicon():
-    return send_from_directory(os.path.join(app.root_path, 'static'),
-                               'favicon.ico', mimetype='image/vnd.microsoft.icon')
+#
+# @app.route('/favicon.ico')
+# def favicon():
+#     return send_from_directory(os.path.join(app.root_path, 'static'),
+#                                'favicon.ico', mimetype='image/vnd.microsoft.icon')
 
 
 @app.route("/", methods=['GET', 'POST'])
@@ -31,9 +31,17 @@ def searched_question(search_text):
 
 @app.route("/list")
 def get_question_list():
-    all_questions = data_manager.get_questions()
+    order_by = request.args.get('order_by')
+    order = request.args.get('order_direction')
+    all_questions = data_manager.get_questions(order_by, order)
     return render_template("list.html", all_data_reversed=all_questions)
 
+#
+# @app.route("/list", methods=['GET', 'POST'])
+# def list():
+#     order_by = request.args.get('order_by')
+#     print(order_by)
+#     return "fuck"
 
 @app.route("/list/<question_id>", methods=['GET', 'POST'])
 def q_id(question_id):
